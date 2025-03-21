@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Page 1</title>
+</head>
+<body>
+    <p>Name</p>
+    <input id="name" name="sa">
+    <p>Age</p>
+    <input type="number" id="age" name="as">
+
+    <div class="card">
+                <div class="card-header">Select Your Route</div>
+                <div class="card-body">
+                    <div class="mb-3">
+                        <label for="selectF">From</label>
+                <select class="form-control" id="selectF">
+                    <option value="">Select Station Origin</option>
+                    <option value="Balintawak">Balintawak</option>
+                    <option value="Monumento">Monumento</option>
+                    <option value="5th Avenue">5th Avenue</option>
+                    <option value="R. Papa">R. Papa</option>
+                    <option value="Abad Santos">Abad Santos</option>
+                    <option value="Blumentritt">Blumentritt</option>
+                    <option value="Bambang">Bambang</option>
+                    <option value="Doroteo Jose">Doroteo Jose</option>
+                    <option value="Carriedo">Carriedo</option>
+                    <option value="Central Terminal">Central Terminal</option>
+                    <option value="United Nations">United Nations</option>
+                    <option value="Pedro Gil">Pedro Gil</option>
+                    <option value="Quirino">Quirino</option>
+                    <option value="Vito Cruz">Vito Cruz</option>
+                    <option value="Gil Puyat">Gil Puyat</option>
+                    <option value="Libertad">Libertad</option>
+                    <option value="Baclaran">Baclaran</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label for="selectT">To</label>
+                <select class="form-control" id="selectT">
+                    <option value="">Select Station Destination</option>
+                    <option value="Balintawak">Balintawak</option>
+                    <option value="Monumento">Monumento</option>
+                    <option value="5th Avenue">5th Avenue</option>
+                    <option value="R. Papa">R. Papa</option>
+                    <option value="Abad Santos">Abad Santos</option>
+                    <option value="Blumentritt">Blumentritt</option>
+                    <option value="Bambang">Bambang</option>
+                    <option value="Doroteo Jose">Doroteo Jose</option>
+                    <option value="Carriedo">Carriedo</option>
+                    <option value="Central Terminal">Central Terminal</option>
+                    <option value="United Nations">United Nations</option>
+                    <option value="Pedro Gil">Pedro Gil</option>
+                    <option value="Quirino">Quirino</option>
+                    <option value="Vito Cruz">Vito Cruz</option>
+                    <option value="Gil Puyat">Gil Puyat</option>
+                    <option value="Libertad">Libertad</option>
+                    <option value="Baclaran">Baclaran</option>
+                </select>
+                    </div>
+                  
+                </div>
+
+
+                    <div>
+                        <button type="submit" class="btn-custom" onclick="sendData(event)">Proceed to payment</button>
+ 
+
+    <script>
+        function sendData(event) {
+            event.preventDefault(); 
+
+            var name = document.getElementById("name").value;
+            var age = document.getElementById("age").value;
+            var from = document.getElementById("selectF").value;
+            var to = document.getElementById("selectT").value;
+
+
+            if (!name || !age || !from || !to) {
+                alert("Please fill out all the fields.");
+                return;
+            }
+
+            var url = "test 6.html?name=" + encodeURIComponent(name) + "&age=" + encodeURIComponent(age) + "&from=" + encodeURIComponent(from) + "&to=" + encodeURIComponent(to);
+            window.location.href = url;
+        }
+    </script>
+</body>
+</html>

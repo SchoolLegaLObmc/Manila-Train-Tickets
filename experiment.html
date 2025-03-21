@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+
+        img {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <h1>GeeksforGeeks</h1>
+        <h3>Click on the button to see image</h3>
+        <div class="col-md-6">
+            <div class="form-group">
+                <select id="No.">
+                    <option value="Gcash">Gcash</option>
+                    <option value="PayMaya">PayMaya</option>
+                    <option value="Cash">Cash</option>
+                    <option value="BDO">BDO</option>
+                </select>
+            </div>
+           <img id="GcashImage" src="qr.png" alt="Gcash QR" />
+            <img id="PayMayaImage" src="t.png" alt="PayMaya QR" />
+            <img id="CashImage" src="bt.jpg" alt="Cash Image" />
+        </div>
+        <button type="button" onclick="show()" id="btnID">
+            Show Image
+        </button>
+    </div>
+
+    <script>
+        function show() {
+            var pm = document.getElementById("No.").value;
+            document.getElementById('GcashImage').style.display = "none";
+            document.getElementById('PayMayaImage').style.display ="none";
+            document.getElementById('CashImage').style.display = "none";
+            if (pm === "Gcash") {
+             document.getElementById('GcashImage').style.display ="block";
+             document.getElementById('btnID').style.display = "none";
+             } else if (pm === "PayMaya") {
+            document.getElementById('PayMayaImage').style.display = "block" ;
+            document.getElementById('btnID').style.display = "none";
+             } else if (pm === "Cash") {
+             document.getElementById('CashImage').style.display = "block" ;
+             document.getElementById('btnID').style.display = "none";
+            }
+             else{
+                document.getElementById('btnID').style.display = "block";
+            }
+        }
+    </script>
+</body>
+
+</html>

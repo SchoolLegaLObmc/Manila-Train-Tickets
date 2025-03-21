@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Page 1</title>
+</head>
+<body>
+    <p>Name</p>
+    <input id="name" name="sa">
+    <p>Age</p>
+    <input id="age" name="as">
+    <button onclick="sendData()">Send Data</button>
+
+    <script>
+        function sendData() {
+            var name = document.getElementById("name").value;
+            var age = document.getElementById("age").value;
+            var url = "test2.html?name=" + encodeURIComponent(name) + "&age=" + encodeURIComponent(age);
+            window.location.href = url;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Page 2</title>
+</head>
+<body>
+    <div id="nameDisplay"></div>
+    <div id="result"></div> <script>
+        function getQueryParam(key) {
+            const urlSearchParams = new URLSearchParams(window.location.search);
+            return urlSearchParams.get(key);
+        }
+
+        var receivedName = getQueryParam("name");
+        var age = getQueryParam("age"); // Get the age parameter
+
+        if (receivedName) { // Check if receivedName exists
+            document.getElementById("nameDisplay").textContent = "Hello, " + receivedName + "!";
+        } else {
+            document.getElementById("nameDisplay").textContent = "Name not found.";
+        }
+
+        if (age) { // Check if age exists before using it
+            age = parseInt(age); // Convert age to a number
+
+            if (age >= 18 && age < 60) {
+                document.getElementById("result").textContent = "You are eligible to vote.";
+            } else if (age < 18 && age > 0) {
+                document.getElementById("result").textContent = "You are too young to vote.";
+            } else if (age >= 60 && age < 120) { // added <120 to avoid conflict with the dinosaur check.
+                document.getElementById("result").textContent = "You are eligible to vote. Please proceed to priority area.";
+            } else if (age >= 120) {
+                document.getElementById("result").textContent = "Dana dinosaur ka ata."; // Assuming this is a humorous message
+            } else {
+                document.getElementById("result").textContent = "Invalid Input";
+            }
+        } else {
+            document.getElementById("result").textContent = "Age not provided."; // Handle case where age is missing
+        }
+    </script>
+</body>
+</html>

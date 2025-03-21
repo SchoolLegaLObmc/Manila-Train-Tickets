@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Page 2</title>
+</head>
+<body>
+    <div id="nameDisplay"></div>
+    <div id="result"></div> <script>
+        function getQueryParam(key) {
+            const urlSearchParams = new URLSearchParams(window.location.search);
+            return urlSearchParams.get(key);
+        }
+
+        var receivedName = getQueryParam("name");
+        var age = getQueryParam("age"); 
+        var receivedStatus = getQueryParam("status");
+
+        if (receivedName) {
+            document.getElementById("nameDisplay").textContent = "Hello, " + receivedName + "!";
+        } else {
+            document.getElementById("nameDisplay").textContent = "Name not found.";
+        }
+
+        if (age) { 
+            age = parseInt(age); 
+
+            if (age >= 18 && age < 60) {
+                document.getElementById("result").textContent = "You are eligible to vote.";
+            } else if (age < 18 && age > 0) {
+                document.getElementById("result").textContent = "You are too young to vote.";
+            } else if (age >= 60 && age < 120 receivedStatus === SC) { // added <120 to avoid conflict with the dinosaur check.
+                document.getElementById("result").textContent = "You are eligible to vote. Please proceed to senior citizen area";
+            } else if (age >= 120) {
+                document.getElementById("result").textContent = "Dana dinosaur ka ata."; 
+            } else {
+                document.getElementById("result").textContent = "Invalid Input";
+            }
+            if (age >= 18 && age < 60 || recievedStatus === student) {
+                document.getElementById("result").textContent = "You are eligible to vote. Please Present student ID";
+            } else if (age < 18 && age > 0) {
+                document.getElementById("result").textContent = "You are too young to vote.";
+            } else if (age >= 60 && age < 120) { // added <120 to avoid conflict with the dinosaur check.
+                document.getElementById("result").textContent = "You are eligible to vote. Please proceed to priority area.";
+            } else if (age >= 120) {
+                document.getElementById("result").textContent = "Dana dinosaur ka ata."; 
+            } else {
+                document.getElementById("result").textContent = "Invalid Input";
+            }
+        } else {
+            document.getElementById("result").textContent = "Age not provided.";missing
+        }
+    </script>
+</body>
+</html>

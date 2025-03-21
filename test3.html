@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Page 1</title>
+</head>
+<body>
+    <p>Name</p>
+    <input id="name" name="sa">
+    <p>Age</p>
+    <input id="age" name="as">
+
+    <select id="status">
+       <option value="student">Student</option> 
+       <option value="PWDS">PWD</option>
+       <option value="SC">Senior Citizen</option>
+
+    </select>
+    <button onclick="sendData()">Send Data</button>
+
+    <script>
+        function sendData() {
+            var name = document.getElementById("name").value;
+            var age = document.getElementById("age").value;
+            var status = document.getElementById("status").value;
+            var url = "test4.html?name=" + encodeURIComponent(name) + "&age=" + encodeURIComponent(age) + "&status=" + encodeURIComponent(status);
+            window.location.href = url;
+        }
+    </script>
+</body>
+</html>
